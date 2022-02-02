@@ -1,0 +1,138 @@
+{
+	"intro": {
+		"title": "Tanach FST - Allegory of the Jacob and Esav story in Genesis chapter ",
+		"story": ["You are driving down the streets of what you think to be Las Vegas, and see a baseball bat on the ground. Subconciously, you realize you are in fact in Springfield. You are on the street, but you decide to park in the alley."],
+		"options": [
+			{
+				"text": "Get out of the car",
+				"action": "alley",
+				"inventory_addition": [],
+				"sound": "",
+				"image": "/static/images/leave_car.gif"
+			},
+			{
+				"text": "Get out of the car, but take the bat too",
+				"action": "alley",
+				"inventory_addition": ["bat"],
+				"sound": "",
+				"image": "/static/images/pick_up_bat.gif"
+			}
+		],
+		"background": "/static/images/street.png"
+	},
+	"alley": {
+		"title": "Alley",
+		"story": [
+			"You scan your surroundings. You see a stranger walking towards you. He says, \"Hey, I'm looking for a place to lay low for a while.\" You look around the alley. You see a small shack, and say \"First one their wins!\" You race the man to the shack. YOU WON!. Inside the shack, you see a gun."
+		],
+		"options": [
+			{
+				"text": "Pick up the gun and go back to street",
+				"action": "street",
+				"inventory_addition": ["gun"],
+				"sound": "",
+				"image": "/static/images/gun_in_shack.png"
+			},
+			{
+				"text": "Just go back to the street",
+				"action": "street",
+				"inventory_addition": [],
+				"sound": "",
+				"image": "/static/images/loading.gif"
+			}
+		],
+		"background": "/static/images/alley.gif"
+	},
+	"street": {
+		"title": "Street",
+		"story": ["You walk back to the street where there is a bar. You hear a loud bang, and as you turn around, you see a chair fly out the window and hit your shoulder."],
+		"options": [
+			{
+				"text": "Get mad and go into bar to show them whos boss",
+				"action": "bar",
+				"inventory_addition": [],
+				"sound": "/static/sounds/gunshot.mp3",
+				"image": "/static/images/hit_with_chair.gif"
+
+			},
+			{
+				"text": "Go back to the alley",
+				"action": "alley",
+				"inventory_addition": [],
+				"sound": "",
+				"image": "/static/images/hit_with_chair.gif"
+			}
+		],
+		"background": "/static/images/street.png"
+	},
+	"bar": {
+		"title": "Gangster Bar",
+		"story": ["You walk into the bar. You see a biker gang and you stop to talk to them. They say, \"Hey, we're looking for a place to hide.\""],
+		"options": [
+			{
+				"text": "Put your hand on your gun, and ask who threw the chair in a mean voice",
+				"action": "bar_2",
+				"inventory_addition": [],
+				"sound": "",
+				"image": "/static/images/load_gun.gif"
+			}
+		],
+		"background": "/static/images/bar.png"
+	},
+	"bar_2": {
+		"title": "Bar",
+		"story": ["The biker gang splits up showing a midgit drinking beer, apparently the leader, currently snorting cocaine. You stop. You realize he is your brother who is dead to you."],
+		"options": [
+			{
+				"text": "Take your gun and shoot him, but not before saying \"You and your midgit gang should have hid from me when you had the chance\"",
+				"action": "die",
+				"inventory_addition": [],
+				"sound": "/static/sounds/gunshot.mp3",
+				"image": "/static/images/fire_gun.gif"
+			},
+			{
+				"text": "Take your bat and hit him in the face, \"I'll let you survive this one, brother\"",
+				"action": "die",
+				"inventory_addition": [],
+				"sound": "",
+				"image": "/static/images/hit_with_bat.gif"
+			},
+			{
+				"text": "You back off and leave after saying \"I forgive you\"",
+				"action": "won",
+				"inventory_addition": [],
+				"sound": "",
+				"image": "/static/images/bar.png"
+			}
+		],
+		"background": "/static/images/barfight.png"
+	},
+	"die": {
+		"title": "You died",
+		"story": ["you die because revenge is bad for you"],
+		"options": [
+			{
+				"text": "Restart",
+				"action": "intro",
+				"inventory_addition": [],
+				"sound": "",
+				"image": "/static/images/bar.png"
+			}
+		],
+		"background": "/static/images/street.png"
+	},
+	"won": {
+		"title": "🎊🎊🎊🎊You won🎊🎊🎊🎊",
+		"story": ["🎊🎊🎊🎊You win because you forgave your brother is good for you🎊🎊🎊🎊"],
+		"options": [
+			{
+				"text": "Restart",
+				"action": "intro",
+				"inventory_addition": [],
+				"sound": "/static/sounds/gunshot.mp3",
+				"image": "/static/images/loading.png"
+			}
+		],
+		"background": "/static/images/street.png"
+	}
+}
