@@ -1,4 +1,4 @@
-module allegorical_adventure_web
+module tanachtextadventure
 
 go 1.17
 

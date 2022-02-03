@@ -1,4 +1,4 @@
-package allegorical_adventure_web
+package tanachtextadventure
 
 import (
 	"encoding/json"

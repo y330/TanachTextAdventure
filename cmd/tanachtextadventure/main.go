@@ -1,7 +1,7 @@
 package main
 
 import (
-	allegoricalAdventure "allegorical_adventure_web"
+	adventure "tanachtextadventure"
 	"flag"
 	"fmt"
 	"html/template"
@@ -20,19 +20,19 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	story, err := allegoricalAdventure.JsonStory(f)
+	story, err := adventure.JsonStory(f)
 	if err != nil {
 		panic(err)
 	}
 	tpl := template.Must(template.New("").Parse(storyTmpl))
-	h := allegoricalAdventure.NewHandler(story,
-		allegoricalAdventure.WithTemplate(tpl),
-		allegoricalAdventure.WithPathFunc(pathFn),
+	h := adventure.NewHandler(story,
+		adventure.WithTemplate(tpl),
+		adventure.WithPathFunc(pathFn),
 	)
 	mux := http.NewServeMux()
 	mux.Handle("/story", h)
 
-	mux.Handle("/", allegoricalAdventure.NewHandler(story))
+	mux.Handle("/", adventure.NewHandler(story))
 	// handle static
 	mux.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	fmt.Printf("starting the server at port: %d\n", *port)
